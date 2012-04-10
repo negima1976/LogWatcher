@@ -9,8 +9,11 @@ var express = require('express')
   , path     = require('path')
   , os       = require('os')
   , fs       = require('fs')
-  , server   = '192.168.1.192'
-  , port     = 3000
+  , config   = require('config')
+  , server   = config.server.host
+  , port     = config.server.port
+  , title    = config.site.title
+  , url      = config.site.url
   , hostname = os.hostname()
   , log = null
   , log_file = '/var/log/syslog';
@@ -43,7 +46,8 @@ app.get('/', routes.index);
 app.get('/error', function(req, res){
   log_file = check_url(path.basename(req.url));
   res.render('logs', {
-     title: 'LogWatcher',
+     url: url,
+     title: title,
      hostname: hostname,
      log: log_file,
      server: server,
@@ -54,7 +58,8 @@ app.get('/error', function(req, res){
 app.get('/access', function(req, res){
   log_file = check_url(path.basename(req.url));
   res.render('logs', {
-     title: 'LogWatcher',
+     url: url,
+     title: title,
      hostname: hostname,
      log: log_file,
      server: server,
