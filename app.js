@@ -16,7 +16,7 @@ var express = require('express')
   , url      = config.site.url
   , hostname = os.hostname()
   , log = null
-  , log_file = '/var/log/syslog';
+  , log_file = "/var/log/syslog";
 
 var app = module.exports = express.createServer();
 var io  = socketio.listen(app);
@@ -69,9 +69,9 @@ app.get('/access', function(req, res){
 
 function check_url(basename) {
   if (basename.match(/error/)) {
-    log_file = '/var/log/apache2/error.log';
+    log_file = config.apache.error;
   } else if (basename.match(/access/)) {
-    log_file = '/var/log/apache2/access.log';
+    log_file = config.apache.access;
   }
 
   return log_file;
