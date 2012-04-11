@@ -23,3 +23,4 @@ npm install
 node app.js
 ```
 
+ブラウザからhttp://hogehoge:3000/で見れます  
