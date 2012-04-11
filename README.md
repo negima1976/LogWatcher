@@ -1,4 +1,15 @@
 # LogWatcher
+ログを垂れ流すだけのアプリ  
+見たいログを指定すればそのログを垂れ流してくれます  
+
+## Requirements
+node v0.6系なら動く  
+0.7系では試していません..  
+express  
+ejs  
+socket.io  
+configがあれば動きます  
+`npm install`でその辺りはまとめて入れてくれます  
 
 ## How to Install
 ```bash
@@ -11,5 +22,4 @@ npm install
 ```bash
 node app.js
 ```
-
 
