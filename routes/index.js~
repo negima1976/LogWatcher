@@ -12,7 +12,6 @@ var url      = config.site.url;
 exports.index = function(req, res){
   res.render('index', { 
     title: title,
-    url: url,
     server: server,
     port:   port
    });

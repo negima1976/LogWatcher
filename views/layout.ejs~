@@ -13,6 +13,7 @@
     <script>
       var server = "<%= server %>";
       var port   = <%= port %>;
+      var url    = "<%= url %>";
     </script>
     <script type="text/javascript" src="/javascripts/client.js"></script>
   </head>
